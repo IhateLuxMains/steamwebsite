@@ -15,7 +15,7 @@ soup = BeautifulSoup(requests.get(page).text, "html.parser")
 data = json.loads(soup.text)['response']['games']
 gamez = []
 time = []  
-for i in data(5):
+for i in data:
         if(i['playtime_forever'] > 0):
             gamez.append(i['name'])
             time.append(i['playtime_forever'])
