@@ -1,9 +1,9 @@
-{% extends 'base.html' %}
 
-{% block head%}
-<h1>Template</h1>
-{% endblock %}
-
-{% block  body %}
-
-{% endblock %} 
+<h2> How to use it</h2>  
+<li>Get your accout ID</li>
+<li>Enter account id into the "Enter id" box</li> 
+ <li>Hit enter and wait for iceberg to generate</li>
+ <form action="{{ url_for('stats')}}" method="POST">
+    <input type="text" name="steamID">
+    <input type="submit" value="Submit">
+</form>
