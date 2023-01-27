@@ -1,19 +1,15 @@
 from urllib import response
 import requests
 import json
-from bs4 import BeautifulSoup
+import main
 import numpy as np
-from app import my_form_post
 
 default = 76561198405626506
 
 
+main.variable
 
-
-
-response  = requests.get("http://api.steampowered.com/IPlayerService/GetOwnedGames/v0001/?key=FCA53F323070D2EF17EF9D969B43EAC4&steamid=%s&include_appinfo=true&format=json"% (my_form_post)).text
-#soup = BeautifulSoup(requests.get(response).text, "html.parser")
-
+response  = requests.get("http://api.steampowered.com/IPlayerService/GetOwnedGames/v0001/?key=FCA53F323070D2EF17EF9D969B43EAC4&steamid=%s&include_appinfo=true&format=json"% (id)).text
 response_info = json.loads(response)['response']['games']
 
 gamez = []
@@ -23,3 +19,4 @@ for i in response_info:
               gamez.append(i['name'])
               time.append(i['playtime_forever'])
  
+np.column_stack((gamez,time))
